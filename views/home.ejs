@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class="ui three column grid">
+
+  <% campground.forEach(function(campground){ %>
+  <div class="column">
+
+    <div class="ui segment">
+      <h4 id="title"><%= campground.title %></h4>
+
+      <a href="/campgrounds/<%= campground._id%>"><img class="ui large image" src=<%= campground.image %> ></a>
+      <p><%=campground.description.slice(0,100)%>...</p>
+      <a href="/campgrounds/<%= campground._id %>"><button class="tiny ui button" type="button">Read More ..</button></a>
+    </div>
+  </div>
+  <% }); %>
+
+</div>
+
+
+
+
+<% include ./partials/footer %>

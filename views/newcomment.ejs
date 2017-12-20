@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header">Add New Comment To <%=campground.title%></h2>
+
+  <form class="ui form" action="/campgrounds/<%=campground._id%>/comment" method="post">
+    <div class="field">
+      <label>Auther</label>
+      <input type="text" name="comment[auther]" placeholder="auther">
+    </div>
+    <div class="field">
+      <label>Comment</label>
+      <textarea name="comment[text]" placeholder="write something here ...!" ></textarea>
+    </div>
+      <button class="ui button" type="submit">Submit</button>
+  </form>
+
+</div>
+<% include ./partials/footer %>

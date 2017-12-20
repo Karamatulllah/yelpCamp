@@ -1,0 +1,54 @@
+<% include ./partials/header %>
+<div class="ui container" id="maindiv">
+  <div class="ui people shape">
+    <div class="sides">
+      <div class="active side">
+        <div class="ui card">
+          <div class="image">
+            <img src=<%= campground.image %>>
+          </div>
+          <div class="content">
+            <div class="header"><%= campground.title %></div>
+            <div class="meta">
+              <a>campground</a>
+            </div>
+            <div class="description">
+              <%= campground.description %>
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              <form action="/campgrounds/<%= campground._id %>?_method=delete" method="post">
+                <button class="mini ui button">Delete</button>
+                </form>
+            </span>
+            <span>
+              <a href="/campgrounds/<%=campground._id%>/edit"><button type="button" class="mini ui button">Update</button></a>
+            </span>
+          </div>
+<% if(campground.comments.length > 0) { %>
+          <div class="ui horizontal divider">
+                comments
+          </div>
+<% } %>
+          <% campground.comments.forEach(function(comment){ %>
+          <div class="ui cards">
+            <div class="card">
+              <div class="content">
+                <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+                <div class="header">
+                  <%= comment.auther %>
+                </div>
+                <div class="description">
+                  <%= comment.text %>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+              <a href="/campgrounds/<%=campground._id%>/comment/new" class="ui basic button horizontal left floated"> Add Comment </a>
+
+
+        </div>
+      </div>
+
+<% include ./partials/footer %>

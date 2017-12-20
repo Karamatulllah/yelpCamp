@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header">Update Campgrounds</h2>
+
+  <form class="ui form" action="/campgrounds/<%= campgrounds._id%>?_method=put" method="post">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="campground[title]" placeholder="title" value="<%= campgrounds.title %>">
+    </div>
+    <div class="field">
+      <label>Image URL</label>
+      <input type="text" name="campground[image]" placeholder="image url" value="<%= campgrounds.image%>">
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <textarea name="campground[description]" placeholder="write something here ...!"><%= campgrounds.description %></textarea>
+    </div>
+      <button class="ui button" type="submit">Update</button>
+  </form>
+
+</div>
+<% include ./partials/footer %>

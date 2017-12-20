@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header">Add Campgrounds</h2>
+
+  <form class="ui form" action="/campgrounds" method="post">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="campground[title]" placeholder="title">
+    </div>
+    <div class="field">
+      <label>Image URL</label>
+      <input type="text" name="campground[image]" placeholder="image url">
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <textarea name="campground[description]" placeholder="write something here ...!" ></textarea>
+    </div>
+      <button class="ui button" type="submit">ADD</button>
+  </form>
+
+</div>
+<% include ./partials/footer %>
